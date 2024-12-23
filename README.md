@@ -9,6 +9,7 @@ jakarta.servlet-jakarta.servlet-api-6.1.0-provided
 
 # ICT_CRUD
 **#persistence**
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -38,7 +39,7 @@ jakarta.servlet-jakarta.servlet-api-6.1.0-provided
 	</persistence-unit>
 
 </persistence>
-
+```
 **#WEBINITIALIZER**
 public class EmployeeWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
         @Override
