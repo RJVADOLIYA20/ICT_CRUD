@@ -39,7 +39,7 @@ jakarta.servlet-jakarta.servlet-api-6.1.0-provided
 
 </persistence>
 
-#WEBINITIALIZER
+**#WEBINITIALIZER**
 public class EmployeeWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
         @Override
 	protected Class<?>[] getRootConfigClasses() {
@@ -57,7 +57,7 @@ public class EmployeeWebInitializer extends AbstractAnnotationConfigDispatcherSe
 		return new String[] {"/"};
 	}
 
-#CONFIGURATION
+**#CONFIGURATION**
 @Configuration
 @ComponentScan(basePackages = "com.ty")
 public class EmployeeConfiguration {
@@ -69,7 +69,7 @@ public class EmployeeConfiguration {
 	public InternalResourceViewResolver getInternalResourceViewResolver() {
 		return new InternalResourceViewResolver("/WEB-INF/views/", ".jsp");
 	}
-#CONTROLLER
+**#CONTROLLER**
 @Controller
 public class EmployeeController {
         @Autowired
@@ -131,7 +131,7 @@ public class EmployeeController {
 		this.employeeDao.delete(id);
 		return "redirect:read";
 	}
-#DAO
+**#DAO**
 @Repository
 public class EmployeeDao {
 	@Autowired
@@ -162,7 +162,7 @@ public class EmployeeDao {
 	      this.entityManager.remove(this.getUserById(id));
 	      entityTransaction.commit();
 	   }
-#REGISTERPAGE
+**#REGISTERPAGE**
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
@@ -232,7 +232,7 @@ public class EmployeeDao {
 </form:form>
 </body>
 </html>
-#READPAGE
+**#READPAGE**
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -286,7 +286,8 @@ public class EmployeeDao {
 
 </body>
 </html>
-#<%@ page language="java" contentType="text/html; charset=UTF-8"
+**#update**
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
