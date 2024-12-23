@@ -1,4 +1,5 @@
 #DEPENDENCY
+```
 MYSQLConnector
 Hibernate-core-relocation-5.6.15.Final
 spring-webmvc-6.2.0
@@ -6,10 +7,11 @@ jakarta.servlet.jsp.jstl-api-3.0.0
 org.glassfish.web-jakarta.servlet.jsp.jstl-3.0.1
 javax.servlet-jstl-1.2
 jakarta.servlet-jakarta.servlet-api-6.1.0-provided
+```
+
 
 # ICT_CRUD
 **#persistence**
-```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -39,8 +41,10 @@ jakarta.servlet-jakarta.servlet-api-6.1.0-provided
 	</persistence-unit>
 
 </persistence>
-```
+
+
 **#WEBINITIALIZER**
+```java
 public class EmployeeWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
         @Override
 	protected Class<?>[] getRootConfigClasses() {
@@ -57,7 +61,9 @@ public class EmployeeWebInitializer extends AbstractAnnotationConfigDispatcherSe
 		// TODO Auto-generated method stub
 		return new String[] {"/"};
 	}
+```
 
+```
 **#CONFIGURATION**
 @Configuration
 @ComponentScan(basePackages = "com.ty")
@@ -70,7 +76,10 @@ public class EmployeeConfiguration {
 	public InternalResourceViewResolver getInternalResourceViewResolver() {
 		return new InternalResourceViewResolver("/WEB-INF/views/", ".jsp");
 	}
+```
+
 **#CONTROLLER**
+```
 @Controller
 public class EmployeeController {
         @Autowired
@@ -132,7 +141,11 @@ public class EmployeeController {
 		this.employeeDao.delete(id);
 		return "redirect:read";
 	}
+```
+
+
 **#DAO**
+```
 @Repository
 public class EmployeeDao {
 	@Autowired
@@ -163,7 +176,11 @@ public class EmployeeDao {
 	      this.entityManager.remove(this.getUserById(id));
 	      entityTransaction.commit();
 	   }
+```
+
+
 **#REGISTERPAGE**
+```
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
@@ -233,7 +250,11 @@ public class EmployeeDao {
 </form:form>
 </body>
 </html>
+```
+
+
 **#READPAGE**
+```
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -287,7 +308,11 @@ public class EmployeeDao {
 
 </body>
 </html>
+```
+
+
 **#update**
+```
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -357,3 +382,4 @@ public class EmployeeDao {
 	</form:form>
 </body>
 </html>
+```
